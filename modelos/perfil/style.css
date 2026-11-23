@@ -1,0 +1,89 @@
+/* ==========================================================
+   Clínica Vitta · Perfil (Modelo 02)
+   Base criada pela Nobi. Edite à vontade.
+
+   COR PRINCIPAL: troque o valor de --b.
+   Se trocar a cor, ajuste também:
+     --on-b    cor do texto em cima da cor principal (#ffffff ou #111111)
+     --b-text  versão da cor principal que fica legível sobre fundo branco
+     --b-light versão da cor principal que fica legível sobre fundo escuro
+   Dica: para cores escuras, use --on-b branco; para cores claras, #111111.
+   ========================================================== */
+:root {
+  --b: #0E7C66;            /* Verde-petróleo */
+  --on-b: #ffffff;
+  --b-text: #0E7C66;
+  --b-light: #32907d;
+  --b-soft: color-mix(in srgb, var(--b) 10%, #fff);
+  --b-deep: color-mix(in srgb, var(--b) 65%, #000);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;background:var(--b-soft)}
+a{color:inherit}
+h1,h2,h3{margin:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:#15171c;background:#fbfbf9;font-size:17px}
+.w{max-width:1160px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 26px;border-radius:14px;background:var(--b);color:var(--on-b);font-weight:700;font-size:15px;text-decoration:none}
+.btn.line{background:transparent;color:#15171c;box-shadow:inset 0 0 0 2px #15171c}
+.top .w{display:flex;align-items:center;gap:36px;height:84px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}
+.logo i{width:14px;height:14px;border-radius:4px;background:var(--b);transform:rotate(45deg)}
+.top nav{display:flex;gap:30px;margin-left:auto;font-size:15px;font-weight:600;color:#50555f}
+.top nav a{text-decoration:none}
+.hero .w{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center;padding-top:36px;padding-bottom:88px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--b-soft);color:var(--b-text);font-size:13px;font-weight:700}
+.pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--b)}
+.hero h1{margin:22px 0;font-size:clamp(40px,5.4vw,66px);font-weight:800;line-height:1.03;letter-spacing:-.04em}
+.hero h1 em{font-style:normal;color:var(--b-text)}
+.hero p{max-width:44ch;margin:0 0 32px;font-size:18px;line-height:1.65;color:#565c66}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.photo{position:relative}
+.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px 28px 28px 160px}
+.badge{position:absolute;left:-28px;bottom:48px;display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:18px;background:#fff;box-shadow:0 18px 50px rgba(0,0,0,.14);font-size:13px;line-height:1.35;color:#565c66}
+.badge b{font-size:28px;letter-spacing:-.03em;color:#15171c}
+.badge em{font-style:normal;color:#f0a020;letter-spacing:1px}
+.stats{background:#15171c;color:#fff}
+.stats .w{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:44px;padding-bottom:44px}
+.stats div{padding-left:22px;border-left:2px solid var(--b)}
+.stats b{display:block;font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--b-light)}
+.stats span{font-size:15px;color:#b9bec6}
+.feature .w{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding-top:104px}
+.feature.rev img{order:2}
+.feature img{width:100%;aspect-ratio:5/4;object-fit:cover;border-radius:28px}
+.feature h2{margin:18px 0 16px;font-size:clamp(32px,3.6vw,44px);font-weight:800;line-height:1.08;letter-spacing:-.035em}
+.feature p{margin:0;line-height:1.7;color:#565c66}
+.checks{display:grid;gap:14px;margin:26px 0 0;padding:0;list-style:none;font-weight:600}
+.checks li{display:flex;align-items:center;gap:12px}
+.checks li::before{content:"✓";flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--b-soft);color:var(--b-text);font-size:13px;font-weight:800}
+.cta{padding:104px 28px}
+.cta .box{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:32px;max-width:1104px;margin:0 auto;padding:64px;border-radius:32px;background:var(--b);color:var(--on-b)}
+.cta h2{max-width:16ch;font-size:clamp(30px,3.6vw,44px);font-weight:800;line-height:1.08;letter-spacing:-.035em}
+.cta .btn{background:#fff;color:#15171c}
+.faq{padding:0 0 104px}
+.faq .w{max-width:820px}
+.faq h2{margin-bottom:20px;font-size:36px;font-weight:800;letter-spacing:-.03em}
+details{padding:22px 0;border-bottom:1px solid #e4e5e9}
+summary{display:flex;justify-content:space-between;gap:16px;font-size:18px;font-weight:700;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--b-text)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;line-height:1.7;color:#565c66}
+footer{padding:28px 0;font-size:14px;color:#6a707a;border-top:1px solid #e4e5e9}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+@media (max-width:760px){
+  .w{padding:0 20px}
+  .top nav{display:none}
+  .top .btn{margin-left:auto;padding:11px 16px;font-size:14px}
+  .hero .w,.feature .w{grid-template-columns:1fr;gap:40px}
+  .feature .w{padding-top:72px}
+  .feature.rev img{order:0}
+  .badge{left:12px;bottom:16px}
+  .stats .w{grid-template-columns:1fr;gap:20px}
+  .cta{padding:72px 20px}
+  .cta .box{padding:40px 28px;border-radius:24px}
+}

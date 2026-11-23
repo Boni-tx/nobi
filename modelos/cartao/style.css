@@ -1,0 +1,68 @@
+/* ==========================================================
+   Doces da Nina · Cartão (Modelo 05)
+   Base criada pela Nobi. Edite à vontade.
+
+   COR PRINCIPAL: troque o valor de --b.
+   Se trocar a cor, ajuste também:
+     --on-b    cor do texto em cima da cor principal (#ffffff ou #111111)
+     --b-text  versão da cor principal que fica legível sobre fundo branco
+     --b-light versão da cor principal que fica legível sobre fundo escuro
+   Dica: para cores escuras, use --on-b branco; para cores claras, #111111.
+   ========================================================== */
+:root {
+  --b: #C8366B;            /* Rosa */
+  --on-b: #ffffff;
+  --b-text: #C8366B;
+  --b-light: #d35e89;
+  --b-soft: color-mix(in srgb, var(--b) 10%, #fff);
+  --b-deep: color-mix(in srgb, var(--b) 65%, #000);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;background:var(--b-soft)}
+a{color:inherit}
+h1,h2,h3{margin:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{min-height:100vh;font-family:"Nunito Sans",system-ui,sans-serif;color:#17181a;font-size:16px;background:color-mix(in srgb,var(--b) 14%,#f6f5f2)}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg i{position:absolute;border-radius:50%;background:var(--b);filter:blur(70px);opacity:.5}
+.bg i:nth-child(1){left:-120px;top:-100px;width:420px;height:420px}
+.bg i:nth-child(2){right:-100px;top:40%;width:360px;height:360px;opacity:.32}
+.bg i:nth-child(3){left:20%;bottom:-140px;width:300px;height:300px;opacity:.26}
+.page{max-width:540px;margin:0 auto;padding:40px 18px 32px}
+.card{overflow:hidden;border-radius:30px;background:#fff;box-shadow:0 24px 60px -24px rgba(0,0,0,.25)}
+.cover{height:190px}
+.cover img{width:100%;height:100%;object-fit:cover}
+.head{padding:0 26px 24px;text-align:center}
+.avatar{width:112px;height:112px;margin:-56px auto 14px;overflow:hidden;border:5px solid #fff;border-radius:50%;background:var(--b-soft);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;line-height:1.05;letter-spacing:-.03em;overflow-wrap:anywhere}
+.bio{max-width:36ch;margin:10px auto 0;line-height:1.55;color:#5a5d63}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+.chips span{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:#f2f3f5;color:#3d4046;font-size:13px;font-weight:700}
+.chips .on{background:#e6f8ec;color:#177a3d}
+.chips .on::before{content:"";width:7px;height:7px;border-radius:50%;background:#22b35a}
+.links{display:grid;gap:10px;padding:0 20px 24px}
+.link{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:#f4f4f6;font-weight:700;text-decoration:none;transition:transform .15s}
+.link:hover{transform:translateY(-2px)}
+.link svg{flex:none;width:22px;height:22px}
+.link span{flex:1}
+.link em{font-style:normal;opacity:.5}
+.link.main{background:var(--b);color:var(--on-b)}
+.sec{padding:24px 20px 4px;border-top:1px solid #eeeff1}
+.sec h2{margin-bottom:14px;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:20px}
+.grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
+.hours{margin:0 0 20px;padding:0;list-style:none}
+.hours li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed #e3e4e8;font-size:15px}
+.quote{margin:0 0 22px;padding:18px 20px;border-radius:18px;background:var(--b-soft);line-height:1.55}
+.quote p{margin:0 0 8px}
+.quote small{font-weight:700;color:#5a5d63}
+footer{padding:22px;text-align:center;font-size:12.5px;color:#6b6e75}
+@media (max-width:480px){
+  .page{padding:0 0 24px}
+  .card{border-radius:0 0 28px 28px;box-shadow:none}
+}

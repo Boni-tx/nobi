@@ -1,0 +1,75 @@
+/* ==========================================================
+   Lume Fotografia · Galeria (Modelo 03)
+   Base criada pela Nobi. Edite à vontade.
+
+   COR PRINCIPAL: troque o valor de --b.
+   Se trocar a cor, ajuste também:
+     --on-b    cor do texto em cima da cor principal (#ffffff ou #111111)
+     --b-text  versão da cor principal que fica legível sobre fundo branco
+     --b-light versão da cor principal que fica legível sobre fundo escuro
+   Dica: para cores escuras, use --on-b branco; para cores claras, #111111.
+   ========================================================== */
+:root {
+  --b: #23272E;            /* Grafite */
+  --on-b: #ffffff;
+  --b-text: #23272E;
+  --b-light: #86888c;
+  --b-soft: color-mix(in srgb, var(--b) 10%, #fff);
+  --b-deep: color-mix(in srgb, var(--b) 65%, #000);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;background:var(--b-soft)}
+a{color:inherit}
+h1,h2,h3{margin:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{font-family:"Figtree",system-ui,sans-serif;color:#151515;background:#f5f4f0;font-size:16px}
+.layout{display:grid;grid-template-columns:300px minmax(0,1fr);min-height:100vh}
+aside{position:sticky;top:0;display:flex;flex-direction:column;gap:28px;height:100vh;overflow:auto;padding:40px 32px;background:var(--b);color:var(--on-b)}
+.name{font-family:"Syne",sans-serif;font-weight:800;font-size:40px;line-height:.95;letter-spacing:-.02em;text-decoration:none;overflow-wrap:anywhere}
+.tag{margin:-14px 0 0;font-size:14px;opacity:.8}
+aside nav{display:grid;gap:12px;font-size:17px;font-weight:500}
+aside nav a{display:flex;justify-content:space-between;padding-bottom:10px;text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--on-b) 25%,transparent)}
+aside nav a::after{content:"→";opacity:.7}
+.meta{display:grid;gap:6px;margin-top:auto;font-size:14px;opacity:.85}
+main{padding:48px 56px 32px}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid #dddbd4}
+.intro h1{max-width:13ch;font-family:"Syne",sans-serif;font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:.98;letter-spacing:-.03em}
+.intro p{max-width:34ch;margin:0;line-height:1.6;color:#5f5d57}
+.masonry{columns:3 240px;column-gap:18px}
+.masonry figure{margin:0 0 18px;break-inside:avoid}
+.masonry img{width:100%;object-fit:cover;border-radius:8px}
+.masonry figure:nth-child(3n+1) img{aspect-ratio:4/5}
+.masonry figure:nth-child(3n+2) img{aspect-ratio:1/1}
+.masonry figure:nth-child(3n) img{aspect-ratio:3/4}
+figcaption{display:flex;justify-content:space-between;padding-top:8px;font-size:13px;color:#6f6c65}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;margin-top:40px;padding:72px 0;border-top:1px solid #dddbd4}
+.about h2,.contact-card h2{font-family:"Syne",sans-serif;font-weight:800;font-size:36px;line-height:1.05;letter-spacing:-.02em}
+.about p{margin:0 0 14px;line-height:1.75;color:#4f4d48}
+.contact-card{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px;border-radius:14px;background:#fff}
+.contact-card>div p{margin:14px 0 0;line-height:1.6;color:#5f5d57}
+form{display:grid;gap:14px}
+label{display:grid;gap:6px;font-size:13px;font-weight:600;color:#4f4d48}
+input,textarea{padding:12px 14px;border:1.5px solid #dddbd4;border-radius:10px;background:#faf9f6;color:#151515;font:inherit;font-size:15px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-color:var(--b)}
+.btn{justify-self:start;padding:14px 24px;border:0;border-radius:10px;background:var(--b);color:var(--on-b);font:inherit;font-weight:700;cursor:pointer}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:32px 0 8px;font-size:13px;color:#77746d}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  aside{position:relative;flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 20px;height:auto;padding:22px 20px}
+  .name{font-size:26px}
+  .tag,.meta{display:none}
+  aside nav{display:flex;gap:16px;margin-left:auto;font-size:14px}
+  aside nav a{padding:0;border:0}
+  aside nav a::after{content:none}
+  main{padding:28px 20px 24px}
+  .intro{flex-direction:column;align-items:flex-start;gap:16px}
+  .masonry{columns:2 140px;column-gap:10px}
+  .masonry figure{margin-bottom:10px}
+  .about,.contact-card{grid-template-columns:1fr;gap:24px}
+  .about{padding:48px 0}
+  .contact-card{padding:26px}
+}

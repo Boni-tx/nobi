@@ -1,0 +1,83 @@
+/* ==========================================================
+   Cantina Bella · Menu (Modelo 06)
+   Base criada pela Nobi. Edite à vontade.
+
+   COR PRINCIPAL: troque o valor de --b.
+   Se trocar a cor, ajuste também:
+     --on-b    cor do texto em cima da cor principal (#ffffff ou #111111)
+     --b-text  versão da cor principal que fica legível sobre fundo branco
+     --b-light versão da cor principal que fica legível sobre fundo escuro
+   Dica: para cores escuras, use --on-b branco; para cores claras, #111111.
+   ========================================================== */
+:root {
+  --b: #7A1F33;            /* Vinho */
+  --on-b: #ffffff;
+  --b-text: #7A1F33;
+  --b-light: #af7985;
+  --b-soft: color-mix(in srgb, var(--b) 10%, #fff);
+  --b-deep: color-mix(in srgb, var(--b) 65%, #000);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;background:var(--b-soft)}
+a{color:inherit}
+h1,h2,h3{margin:0}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{font-family:"Jost",system-ui,sans-serif;color:#1f1b17;background:#fbf8f3;font-size:16px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05}
+.w{max-width:1120px;margin:0 auto;padding:0 28px}
+.bar{background:var(--b);color:var(--on-b);font-size:13px;letter-spacing:.06em}
+.bar .w{display:flex;justify-content:space-between;gap:16px;padding-top:9px;padding-bottom:9px}
+.head{padding:34px 0 18px;text-align:center;border-bottom:1px solid #e9e2d6}
+.since{margin:0;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#8a7f70}
+.head h1{margin:8px 0 18px;padding:0 20px;font-size:clamp(44px,6vw,76px);letter-spacing:-.01em;overflow-wrap:anywhere}
+.head nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 32px;font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.head nav a{color:#5c5349;text-decoration:none}
+.hero{padding:56px 0 24px;text-align:center}
+.tag{max-width:40ch;margin:0 auto 34px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(22px,2.6vw,30px);line-height:1.35;color:#4a4239}
+.trio{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:18px;align-items:end}
+.trio img{width:100%;object-fit:cover}
+.trio img:nth-child(1),.trio img:nth-child(3){aspect-ratio:3/4;border-radius:6px}
+.trio img:nth-child(2){aspect-ratio:4/5;border-radius:999px 999px 6px 6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border-radius:2px;background:var(--b);color:var(--on-b);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
+.btn.out{background:transparent;color:#1f1b17;box-shadow:inset 0 0 0 1.5px #1f1b17}
+.row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
+.menu{padding:88px 0}
+.menu-head{margin-bottom:48px;text-align:center}
+.menu-head small{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--b-text)}
+.menu-head h2{margin-top:10px;font-size:clamp(38px,4.6vw,58px)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:24px 72px}
+.cat{margin:0 0 12px;font-size:30px;font-style:italic;color:var(--b-text)}
+.item{padding:14px 0}
+.item-top{display:flex;align-items:baseline;gap:10px}
+.item-top h3{font-size:22px}
+.item-top i{flex:1;min-width:24px;border-bottom:1.5px dotted #c9bfae;transform:translateY(-5px)}
+.item-top b{font-size:16px;font-weight:600;white-space:nowrap}
+.item p{margin:4px 0 0;font-size:15px;color:#7a7065}
+.band{position:relative;overflow:hidden;padding:96px 0;text-align:center;color:#fff;background:var(--b-deep)}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+.band .w{position:relative}
+.band h2{max-width:18ch;margin:0 auto 26px;font-size:clamp(36px,4.6vw,60px)}
+.band .btn{background:#fff;color:#1f1b17}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding-block:80px;text-align:center}
+.info small{display:block;margin-bottom:10px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#8a7f70}
+.info p{margin:0;font-family:"Cormorant Garamond",serif;font-size:24px;line-height:1.35}
+.gal{display:grid;grid-template-columns:repeat(4,1fr)}
+.gal img{width:100%;aspect-ratio:1;object-fit:cover}
+footer{padding:28px 0;font-size:13px;text-align:center;color:#8a7f70;border-top:1px solid #e9e2d6}
+@media (max-width:760px){
+  .w{padding:0 20px}
+  .bar .w{justify-content:center}
+  .bar .w span:last-child{display:none}
+  .head nav{gap:8px 18px;font-size:12px}
+  .trio{grid-template-columns:1fr 1fr;gap:10px}
+  .trio img:nth-child(2){grid-column:span 2;grid-row:1;aspect-ratio:1/1}
+  .cols{grid-template-columns:1fr;gap:8px}
+  .menu{padding:64px 0}
+  .info{grid-template-columns:1fr;gap:28px;padding-block:56px}
+  .gal{grid-template-columns:1fr 1fr}
+  .band{padding:72px 0}
+}

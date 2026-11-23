@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+  <!-- Foto de exemplo. Substitua este arquivo pela foto do cliente (ex.: foto-2.jpg) e troque o nome no index.html. -->
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d2dff6"/><stop offset="1" stop-color="#8fafe8"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect x="110" y="130" width="250" height="360" rx="125" fill="#356fd6"/><rect x="410" y="250" width="270" height="240" rx="18" fill="#143e88"/><circle cx="545" cy="175" r="48" fill="#eff4fc"/>
+  <g transform="translate(400 205)" opacity=".82"><rect x="-86" y="-19" width="172" height="38" rx="19" fill="#ffffff"/><text y="6" text-anchor="middle" font-family="ui-monospace,monospace" font-size="16" letter-spacing="2" fill="#143e88">SUA FOTO 2</text></g>
+</svg>
