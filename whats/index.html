@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nobi · WhatsApp</title>
+<!--
+  Link curto para o WhatsApp com mensagem pronta: nobi.tec.br/whats
+  Feito para a bio do Instagram, que estraga links com %20 e acentos.
+  O número vem do assets/js/config.js. A mensagem pode ser trocada abaixo.
+-->
+<script src="../assets/js/config.js"></script>
+<script>
+  (function () {
+    var mensagem = 'Oi! Vim pelo Instagram e quero saber mais sobre os serviços da Nobi.';
+    var numero = (window.NOBI_CONFIG && window.NOBI_CONFIG.whatsapp) || '5554996416612';
+    var url = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensagem);
+    document.addEventListener('DOMContentLoaded', function () { document.getElementById('link').href = url; });
+    location.replace(url);
+  })();
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #111418; color: #EEF0F2;
+         font: 18px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; text-align: center; padding: 16px; }
+  a { color: #111418; background: #FFD43B; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 12px; }
+</style>
+</head>
+<body>
+  <p>Abrindo o WhatsApp…<br><a id="link" href="https://wa.me/5554996416612?text=Oi%21%20Vim%20pelo%20Instagram%20e%20quero%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Nobi.">Abrir conversa</a></p>
+</body>
+</html>
